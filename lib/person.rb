@@ -9,11 +9,11 @@ class Person
 #so we need an initialize- def i tab gives you initialze
 #what goes in body of initialize is irrevlant to what we do inside,
 # doesn't need to pass in hygiene
- # or can do  initialize(name, hygiene = 8 ) # which can 
-   	#override hygiene on creation of the instance Eric etc, #optional always go 
+ # or can do  initialize(name, hygiene = 8 ) # which can
+   	#override hygiene on creation of the instance Eric etc, #optional always go
    	#end
 #rspec --f-f
-   def initialize(name) 
+   def initialize(name)
      @name = name
      @hygiene = 8
      @happiness = 8
@@ -29,7 +29,7 @@ class Person
 
 
 #for happiness, we are limited in what we set it to, only between 0 and 10
-# writer is plain, only keeps track of a number, the current state 
+# writer is plain, only keeps track of a number, the current state
 #and allows us to overwrite that variables
 # this is plain one:
 #  def happiness = num
@@ -43,21 +43,21 @@ class Person
 	elsif num < 0
 	  @happiness = 0
 	else
-	  @happiness = num		  
+	  @happiness = num
     end
-   end 
+   end
 
   def hygiene=(num) #could write total here insted of num, #could do happiness
   	#but too confusing
-  	
+
 	if num > 10
 	  @hygiene = 10
 	elsif num < 0
 	  @hygiene = 0
 	else
-	  @hygiene = num		  
+	  @hygiene = num
     end
-   end 
+   end
 
 #? means return boolean
   def happy?
@@ -71,8 +71,8 @@ class Person
   def get_paid(salary)
   	@bank_account+= salary
   	return "all about the benjamins"
-  end	
-  
+  end
+
   def take_bath
   	#pry tab is binding.pry
   	num = self.hygiene + 4
@@ -84,15 +84,15 @@ class Person
      #hygiene=(hygiene + 4)
      #hygiene" is the method which is passing in the parametere (hygiene + 4)
     #could say self.hygiene=(self.hygiene + 4)
-     #could also say 
+     #could also say
          #num = self.hygiene + 4
          #self.hygiene=(num)
 
   	#this is an instance variable, not an instance method hygiene
   	#reader just returns the @hygiene variable, the writer is the one that we wrote
   	#to change it and control the conditions
-  	
-  
+
+
   #@hygiene just calls the variable in pry
   #hygiene is calling the method
   #hygiene += 4 doesnt work because hygiene is just the reader
@@ -113,7 +113,7 @@ class Person
      	self.happiness += 3
     	friend.happiness+= 3
          "Hi #{friend.name}! It's #{self.name}. How are you?"
-     end 	
+     end
 
   	#whenever you invoke another method in a method, put the self in there
      def start_conversation(talker, topic)
